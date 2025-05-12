@@ -15,6 +15,8 @@ $posts = sanitize($_POST);
 // データベースに接続
 $item = new Item();
 // TODO: バリデーション
+$errors = $item->validate($posts);
+
 // TODO: 商品コードの重複チェック
 
 if (!empty($errors)) {
