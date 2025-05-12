@@ -62,6 +62,21 @@ class Item
         return $values;
     }
 
+     /**
+     * 商品コードで取得
+     *
+     * @return array|null
+     */
+    public function findByCode($code)
+    {
+        $pdo = Database::getInstance();
+        $sql = "SELECT * FROM items WHERE code = :code";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['code' => $code]);
+        $values = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $values;
+    }
+
     /**
      * 商品取得
      *

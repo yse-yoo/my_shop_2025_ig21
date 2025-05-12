@@ -18,6 +18,10 @@ $item = new Item();
 $errors = $item->validate($posts);
 
 // TODO: 商品コードの重複チェック
+$findItem = $item->findByCode($posts['code']);
+if ($findItem) {
+    $errors['code'] = 'この商品コードはすでに使用されています。';
+}
 
 if (!empty($errors)) {
     // TODO: エラーがある場合は、エラーメッセージをセッションに保存
