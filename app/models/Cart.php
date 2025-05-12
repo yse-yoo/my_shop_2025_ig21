@@ -29,7 +29,7 @@ class Cart
 
         if ($selectItem) {
             // TODO: 商品があればセッションに登録
-            // $_SESSION[APP_KEY]['cart_items'][$item_id];
+            $_SESSION[APP_KEY]['cart_items'][$item_id] = $selectItem;
         }
     }
 
@@ -53,6 +53,8 @@ class Cart
     {
         if (!empty($_SESSION[APP_KEY]['cart_items'][$item_id])) {
             // TODO: 商品があればセッションから削除
+            unset($_SESSION[APP_KEY]['cart_items'][$item_id]);
+            return true;
         }
     }
 }
