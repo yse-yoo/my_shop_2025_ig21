@@ -89,7 +89,7 @@ class Item
         try {
             $pdo = Database::getInstance();
             // TODO: SQL: 商品コード、商品名、価格、在庫数を登録
-            $sql = "";
+            $sql = "INSERT INTO items (code, name, price, stock) VALUES (:code, :name, :price, :stock)";
             $stmt = $pdo->prepare($sql);
             return $stmt->execute($posts);
         } catch (PDOException $e) {

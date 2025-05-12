@@ -1,5 +1,5 @@
 <?php 
-// env.php を読み込み
+// app.php を読み込み
 require_once '../app.php';
 
 use App\Models\Item;
