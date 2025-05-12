@@ -141,7 +141,7 @@ class Item
         try {
             $pdo = Database::getInstance();
             // TODO: SQL: idを指定して削除
-            $sql = "";
+            $sql = "DELETE FROM items WHERE id = :id";
             $stmt = $pdo->prepare($sql);
             return $stmt->execute(['id' => $id]);
         } catch (PDOException $e) {
