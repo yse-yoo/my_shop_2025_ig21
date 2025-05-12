@@ -55,7 +55,7 @@ class Item
     {
         $pdo = Database::getInstance();
         // TODO: SQL: id で検索
-        $sql = "";
+        $sql = "SELECT * FROM items WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['id' => $id]);
         $values = $stmt->fetch(PDO::FETCH_ASSOC);
