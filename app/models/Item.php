@@ -110,7 +110,13 @@ class Item
             $pdo = Database::getInstance();
 
             // TODO: SQL: 商品コード、商品名、価格、在庫数を更新
-            $sql = "";
+            $sql = "UPDATE items 
+                    SET 
+                        code = :code, 
+                        name = :name, 
+                        price = :price, 
+                        stock = :stock 
+                    WHERE id = :id";
 
             $stmt = $pdo->prepare($sql);
 
