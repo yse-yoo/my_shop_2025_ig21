@@ -5,7 +5,9 @@ require_once '../app.php';
 use App\Models\Item;
 
 // TODO: id を取得
-$id = 0;
+$id = $_GET['id'] ?? null;
+
+// var_dump($id);
 
 $item = new Item();
 $selectItem = $item->find($id);
