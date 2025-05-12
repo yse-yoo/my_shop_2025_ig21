@@ -22,6 +22,10 @@ $errors = $item->validate($posts);
 if (!empty($errors)) {
     // TODO: エラーがある場合は、エラーメッセージをセッションに保存
     $_SESSION[APP_KEY]['errors'] = $errors;
+
+    // item セッションに保存
+    $_SESSION[APP_KEY]['item'] = $posts;
+
     header('Location: ./input.php');
     exit;
 }

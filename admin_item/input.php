@@ -5,6 +5,11 @@ if (isset($_SESSION[APP_KEY]['errors'])) {
     $errors = $_SESSION[APP_KEY]['errors'];
     unset($_SESSION[APP_KEY]['errors']);
 }
+
+if (isset($_SESSION[APP_KEY]['item'])) {
+    $item = $_SESSION[APP_KEY]['item'];
+    unset($_SESSION[APP_KEY]['item']);
+}
 ?>
 
 <!DOCTYPE html>
